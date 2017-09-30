@@ -1,4 +1,5 @@
-﻿
+#requires -Version 3.0
+
 <#
 
     Author: Pen Warner
@@ -780,8 +781,9 @@ $window.ButNext.add_Click(
     }
     Update-NavButtons
   }
- 
-)$window.ButBack.add_Click{
+)
+
+$window.ButBack.add_Click{
   #Go to the previous tab page
   if($window.wizardPages.SelectedIndex -gt 0)
   {
@@ -798,26 +800,32 @@ $window.DocFolder.add_TextChanged{
 
   Update-NavButtons
   
-}$window.TestStep2.add_TextChanged{
+}
+
+$window.TestStep2.add_TextChanged{
 
   Update-NavButtons
   $window.testTextChanged2.Text = "Step 2 Validated"
-}$window.TestStep3.add_TextChanged{
+}
+
+$window.TestStep3.add_TextChanged{
 
   Update-NavButtons
   $window.testTextChanged3.Text = "Step 3 Validated"
-}$window.TestStep4.add_TextChanged{
+}
+
+$window.TestStep4.add_TextChanged{
 
   Update-NavButtons
   $window.testTextChanged4.Text = "Step 4 Validated"
 }
+
 $window.wizardPages.add_SelectionChanged{
 
-  # add event code here
+ # add event code here
   Update-NavButtons 
 }
 
-
 $window.SelectDocumentRootFolderBtn.add_Click{
   # remove param() block if access to event information is not required
   param
